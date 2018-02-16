@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# does not work:
+#DOCKERVER=docker-engine-1.12.6-1.el7.centos
+DOCKERVER=docker-engine-1.11.2-1.el7.centos
+
 #sudo echo testing sudo || alias sudo="exec $@"
 
 # following https://docs.mesosphere.com/1.7/administration/installing/ent/custom/system-requirements/install-docker-centos/
@@ -43,7 +47,7 @@ ExecStart=
 ExecStart=/usr/bin/docker daemon --storage-driver=overlay -H fd://
 EOFRunDockerSystemd
 
-sudo yum install --assumeyes --tolerant docker-engine-1.11.2-1.el7.centos
+sudo yum install --assumeyes --tolerant $DOCKERVER
 sudo systemctl start docker
 sudo systemctl enable docker
 
