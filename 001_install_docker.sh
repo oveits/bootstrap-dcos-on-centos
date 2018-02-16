@@ -1,3 +1,4 @@
+#!/bin/sh
 
 #sudo echo testing sudo || alias sudo="exec $@"
 
