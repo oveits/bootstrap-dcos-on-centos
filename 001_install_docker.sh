@@ -1,5 +1,7 @@
 #!/bin/sh
 
+docker --version && echo "docker is already installed; exiting with success" && exit 0
+
 # does not work:
 #DOCKERVER=docker-engine-1.12.6-1.el7.centos
 DOCKERVER=docker-engine-1.11.2-1.el7.centos

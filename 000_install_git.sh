@@ -1,1 +1,2 @@
-yum install -y git
+git --version || yum install -y git
+

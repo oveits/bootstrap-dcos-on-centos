@@ -8,8 +8,8 @@ if [ "$SELINUX" == enforcing ]; then
 fi
 
 # check, whether groups "docker" and "nogroup" exist:
-getent group docker && sudo groupadd docker
-getent group nogroup && sudo groupadd nogroup
+getent group docker || sudo groupadd docker
+getent group nogroup || sudo groupadd nogroup
 
 [ "$REBOOT" == "yes" ] && read -p "Need to reboot for the changes to take effect. Reboot now? Please exactly type y > " a;
 
