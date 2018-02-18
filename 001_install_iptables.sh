@@ -5,7 +5,7 @@ sudo yum list installed | grep cronie || sudo yum install -y cronie
 sudo yum list installed | grep git || sudo yum install -y git
 
 cd ~
-git clone //github.com/oveits/bootstrap-centos 2>/dev/null
+git clone https://github.com/oveits/bootstrap-dcos-on-centos 2>/dev/null
 cd bootstrap-centos
 git pull
 
