@@ -8,7 +8,7 @@ BOOTSTRAP_IP=$(genconf/ip-detect)
 
 sudo tee genconf/config.yaml <<- EOFconfig.yaml
 ---
-bootstrap_url: http://${BOOTSTRAP_IP}
+bootstrap_url: http://${BOOTSTRAP_IP}:43756
 cluster_name: cluster_1
 exhibitor_storage_backend: static
 master_discovery: static
@@ -26,3 +26,6 @@ no_proxy:
 - '.baz.com'
 EOFconfig.yaml
 
+[ -x dcos_generate_config.sh ] || curl https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh -o dcos_generate_config.sh
+chmod +x dcos_generate_config.sh
+./dcos_generate_config.sh
