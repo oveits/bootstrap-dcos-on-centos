@@ -18,7 +18,7 @@ for IP in $PUBLIC_AGENT_IP; do
    cd bootstrap-dcos-on-centos
    ls -l
 
-   for SCRIPT in 001_install_docker.sh 002_install_ntp.sh 005_install_compression.sh 006_configure_SELINUX.sh 007_sudoers.sh 008_disable_firewalld.sh 009_source_LANG.sh 011_create_ip-detect.sh
+   for SCRIPT in 001_install_docker.sh 001_install_iptables.sh 002_install_ntp.sh 005_install_compression.sh 006_configure_SELINUX.sh 007_sudoers.sh 008_disable_firewalld.sh 009_source_LANG.sh 011_create_ip-detect.sh
    do
       echo $SCRIPT
       echo "--- running \${SCRIPT} ---"
