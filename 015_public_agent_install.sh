@@ -3,6 +3,8 @@
 [ "$BOOTSTRAP_PORT" == "" ] && BOOTSTRAP_PORT=43756
 [ "$PUBLIC_AGENT_IP" == "" ] && PUBLIC_AGENT_IP=195.201.17.1
 
+curl http://localhost:${BOOTSTRAP_PORT}/ 2>&1 | grep -q 403 && echo "" || echo "NginX does not seem to run on thebootstrap node; exiting" && exit 1
+
 for IP in $PUBLIC_AGENT_IP; do
    ssh $PUBLIC_AGENT_IP << EOFinstall.sh
    uname -a | awk '{print $2}'
